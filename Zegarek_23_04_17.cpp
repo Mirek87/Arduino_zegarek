@@ -63,7 +63,7 @@ byte year, month, date, DoW, hour, minute, second;
 
 //---------------------------------------------------------------------------
 
-void  ustaw_godzine ()// ustawienie godzny
+void  ustaw_godzine ()// ustawienie godzny // to jest funkcja 
 {
 
   showNum( dt.hour / 10, 0, 1);//dziesietne
