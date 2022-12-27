@@ -1,4 +1,4 @@
-#include<EEPROM.h> // Ten plik jest aktualny 23_04_2017
+#include<EEPROM.h> // Ten plik jest aktualny 23_04_2017 r.
 #include <Wire.h>
 #include <DS3231.h>
 
