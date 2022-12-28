@@ -1,4 +1,4 @@
-#include<EEPROM.h> // Ten plik jest aktualny 23_04_2017 r.
+#include<EEPROM.h>
 #include <Wire.h>
 #include <DS3231.h>
 
@@ -312,22 +312,22 @@ void showNum(int Num_seg, int Num_bit, int Num_dec)
   int dec_data = 0;
   switch (Num_seg)
   {
-    case 0: seg_data = 0x02; break;
-    case 1: seg_data = 0x9E; break;
-    case 2: seg_data = 0x24; break;
-    case 3: seg_data = 0x0C; break;
-    case 4: seg_data = 0x98; break;
-    case 5: seg_data = 0x48; break;
-    case 6: seg_data = 0x40; break;
-    case 7: seg_data = 0x1E; break;
-    case 8: seg_data = 0x00; break;
-    case 9: seg_data = 0x08; break;
-    default: seg_data = 0xFF; break;
+    case 0: seg_data = 0x02; break; // 2 w dzisiętnym ;                        w dwójkowym 0000 0010
+    case 1: seg_data = 0x9E; break; // E = 14 ; 9*16 + 14 = 158 w dzisiętnym ; w dwójkowym 1001 1110
+    case 2: seg_data = 0x24; break; // 36 w dzisiętnym ;                       w dwójkowym 0010 0100
+    case 3: seg_data = 0x0C; break; // 12 ;                                                0000 1100
+    case 4: seg_data = 0x98; break; // 152 ;                                               1001 1000
+    case 5: seg_data = 0x48; break; // 72 ;                                                1001 0000
+    case 6: seg_data = 0x40; break; // 64 ;                                                1000 0000
+    case 7: seg_data = 0x1E; break; // 30 ;                                                0001 1110
+    case 8: seg_data = 0x00; break; // 0 ;                                                 0000 0000
+    case 9: seg_data = 0x08; break; // 8 ;                                                 0001 0000
+    default: seg_data = 0xFF; break; // 255 ;                                               1111 1111
 
 
   }
 
-  switch (Num_bit)
+  switch (Num_bit)// 
   {
     case 0: bit_data = 0x10; break;// 0001 0000
     case 1: bit_data = 0x20; break;// 0010 0000
@@ -337,7 +337,7 @@ void showNum(int Num_seg, int Num_bit, int Num_dec)
     case 5: bit_data = 0x02; break;// 0000 0010
     case 6: bit_data = 0x04; break;// 0000 0100
     case 7: bit_data = 0x08; break;// 0000 1000
-    default: bit_data = 0x00; break;
+    default: bit_data = 0x00; break; // 0000 0000
   }
 
   if (Num_dec == 1)
